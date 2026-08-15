@@ -2,6 +2,7 @@ import asyncio
 import logging
 import time
 from aiogram import Bot, Dispatcher, F, types
+from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.filters import CommandStart, StateFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
@@ -13,7 +14,6 @@ from aiogram.types import (
     PreCheckoutQuery,
     FSInputFile
 )
-
 # =====================================================================
 # ⚙️ НАСТРОЙКИ
 # =====================================================================
@@ -31,7 +31,9 @@ ADMIN_ID = 6886475878  # Твой Telegram ID для получения чеко
 
 # =====================================================================
 
-bot = Bot(token=BOT_TOKEN)
+session = AiohttpSession(proxy="http://proxy.server:3128")
+bot = Bot(token=BOT_TOKEN, session=session)
+
 dp = Dispatcher(storage=MemoryStorage())
 
 user_languages = {}
