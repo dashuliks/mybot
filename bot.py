@@ -206,11 +206,27 @@ async def send_tariff_card(chat_id: int, lang: str):
 
 # --- ОБРАБОТЧИКИ ---
 
+# --- ОБРАБОТЧИКИ ---
+
 @dp.message(CommandStart())
 async def cmd_start(message: types.Message, state: FSMContext):
     await state.clear()
-    await message.answer(TEXTS["ru"]["select_lang"], reply_markup=get_language_keyboard(), parse_mode="HTML")
-
+    try:
+        # Отправляем приветственное фото с подписью и выбором языка
+        photo = FSInputFile("preview.jpg")
+        await message.answer_photo(
+            photo=photo,
+            caption=TEXTS["ru"]["select_lang"],
+            reply_markup=get_language_keyboard(),
+            parse_mode="HTML"
+        )
+    except Exception:
+        # Если фото по какой-то причине не загрузилось, отправляем обычным текстом
+        await message.answer(
+            text=TEXTS["ru"]["select_lang"],
+            reply_markup=get_language_keyboard(),
+            parse_mode="HTML"
+        )
 @dp.callback_query(F.data.startswith("lang_"))
 async def set_language(callback: types.CallbackQuery):
     lang = callback.data.split("_")[1]
