@@ -20,8 +20,8 @@ from aiogram.types import (
 
 BOT_TOKEN = "8786703803:AAFbBkEjFMiSorJw92-QpDs6nDtFHXw2bAo"
 
-PUBLIC_CHANNEL_ID = "@dinosha_ace"          
-PUBLIC_CHANNEL_LINK = "https://t.me/dinosha_ace" 
+PUBLIC_CHANNEL_ID = "@darsy_omg"          
+PUBLIC_CHANNEL_LINK = "https://t.me/darsy_omg" 
 
 PRIVATE_CHANNEL_ID = -1003365318816
 USDT_WALLET = "TKVMZrfBCquFMyUHWWpm9gHzgtoN7m3g1r"
