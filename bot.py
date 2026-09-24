@@ -26,7 +26,7 @@ PUBLIC_CHANNEL_LINK = "https://t.me/darsy_omg"
 PRIVATE_CHANNEL_ID = -1003365318816
 USDT_WALLET = "TKVMZrfBCquFMyUHWWpm9gHzgtoN7m3g1r"
 
-ADMIN_USERNAME = "@dinosha_its"
+ADMIN_USERNAME = "@darsy_ace"
 ADMIN_ID = 6886475878  # Твой Telegram ID для получения чеков на проверку
 
 # =====================================================================
